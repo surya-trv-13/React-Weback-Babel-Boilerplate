@@ -17,5 +17,6 @@ module.exports = merge(baseConfig, {
         },
         compress: true,
         lazy: false,
+        hot: true,
     },
 });

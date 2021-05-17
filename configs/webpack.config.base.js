@@ -22,6 +22,28 @@ module.exports = {
                     loader: "babel-loader",
                 },
             },
+            {
+                test: /\.css$/,
+                use: [
+                    { loader: "style-loader" },
+                    {
+                        loader: "css-loader",
+                    },
+                ],
+            },
+            {
+                test: /\.(gif|jpg)$/,
+                use: [
+                    {
+                        loader: "file-loader",
+                        options: {
+                            name: "[name].[ext]",
+                        },
+                    },
+                ],
+            },
+            { test: /\.png$/, use: ["url-loader?mimetype=image/png"] },
+            { test: /\.svg$/, use: ["@svgr/webpack"] },
         ],
     },
     plugins: [
